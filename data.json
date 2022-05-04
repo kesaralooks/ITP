@@ -1,0 +1,70 @@
+{
+  "ambulance": [
+    {
+      "id": 1,
+      "licensePlate": "delectus aut autem",
+      "vehicleModel": "AAB-123",
+      "other": "2"
+    },
+    {
+      "other": 1,
+      "id": 2,
+      "licensePlate": "quis ut nam facilis et officia qui",
+      "vehicleModel": "AAB-123"
+    },
+    {
+      "other": 1,
+      "id": 3,
+      "licensePlate": "fugiat veniam minus",
+      "vehicleModel": "AAB-123"
+    },
+    {
+      "other": 1,
+      "id": 4,
+      "licensePlate": "et porro tempora",
+      "vehicleModel": true
+    },
+    {
+      "other": 1,
+      "id": 5,
+      "licensePlate": "laboriosam mollitia et enim quasi adipisci quia provident illum",
+      "vehicleModel": "AAB-123"
+    },
+    {
+      "other": 1,
+      "id": 6,
+      "licensePlate": "qui ullam ratione quibusdam voluptatem quia omnis",
+      "vehicleModel": "AAB-123"
+    },
+    {
+      "other": 1,
+      "id": 7,
+      "licensePlate": "illo expedita consequatur quia in",
+      "vehicleModel": "AAB-123"
+    },
+    {
+      "other": 1,
+      "id": 8,
+      "licensePlate": "quo adipisci enim quam ut ab",
+      "vehicleModel": true
+    },
+    {
+      "other": 1,
+      "id": 9,
+      "licensePlate": "molestiae perspiciatis ipsa",
+      "vehicleModel": "AAB-123"
+    },
+    {
+      "id": 10,
+      "licensePlate": "btest",
+      "vehicleModel": "dwe",
+      "other": "ew"
+    },
+    {
+      "id": 11,
+      "licensePlate": "Laet",
+      "vehicleModel": "laster",
+      "other": "er"
+    }
+  ]
+}

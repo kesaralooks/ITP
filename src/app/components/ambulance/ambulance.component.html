@@ -1,0 +1,137 @@
+<main role="main" class="flex-shrink-0">
+    <div class="container">
+        <div class="card-header text-secondary">
+            <div class="row">
+                <div class="col">
+                    <h4>Ambulances</h4>
+                </div>
+                <div class="form-inline my-2 my-lg-0">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#saveEditModal"
+                        (click)="AddPatientButton()">Add
+                        Ambulance</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="saveEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form class="modal-content form-group" [formGroup]="ambulanceForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ambulance</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  <div *ngIf="edit" class="row">
+                    <div class="col-4">
+                      <span class="align-middle text-secondary font-weight-bold">ID</span>
+                    </div>
+                    <div class="col">
+                      <div class="input-group mb-3">
+                        <input  type="text" class="form-control" readonly placeholder="Id" aria-label="ID"
+                               aria-describedby="basic-addon1" formControlName="id">
+                      </div>
+                    </div>
+                  </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <span class="align-middle text-secondary font-weight-bold">License Plate</span>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="License Plate" aria-label="Licenseplate"
+                                    aria-describedby="basic-addon1" formControlName="licensePlate">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <span class="align-middle text-secondary font-weight-bold">Vehicle Model</span>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Vehicle Model" aria-label="Vehiclemodel"
+                                    aria-describedby="basic-addon2" formControlName="vehicleModel">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <span class="align-middle text-secondary font-weight-bold">Other</span>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Other"
+                                    aria-label="Insurance" aria-describedby="basic-addon3" formControlName="other">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn border" data-dismiss="modal"
+                        (click)="ClearPatientForm()">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="AddUpdatePatient()">Save
+                        changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="panel panel-default border rounded p-3">
+            <nav class="navbar navbar-light justify-content-between">
+
+                <form class="form-inline">
+                    <span>Show</span>
+                    <div class="dropdown mr-3 ml-2">
+                        <button class="btn border dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            10
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">10</a>
+                            <a class="dropdown-item" href="#">25</a>
+                            <a class="dropdown-item" href="#">50</a>
+                        </div>
+                    </div>
+                    <span>entries</span>
+                </form>
+
+                <form class="form-inline">
+                    <label for="colFormLabel" class="col col-form-label">Search:</label>
+                    <input class="form-control mr-sm-2" type="search" aria-label="Search">
+                </form>
+            </nav>
+
+            <table class="table table-striped ">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">License Plate</th>
+                        <th scope="col">Vehicle Model</th>
+                        <th scope="col">Other</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pati of ambulance">
+                        <td>{{pati.id}}</td>
+                        <td>{{pati.licensePlate}}</td>
+                        <td>{{pati.vehicleModel}}</td>
+                        <td>{{pati.other}}</td>
+                        <td><button class="btn btn-primary" data-toggle="modal" data-target="#saveEditModal"
+                                (click)="EditOpenModal(pati)">Edit</button></td>
+                        <td><button class="btn btn-danger" (click)="RemovePatient(pati)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</main>
